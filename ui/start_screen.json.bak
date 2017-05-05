@@ -1,0 +1,911 @@
+{
+  "namespace": "start",
+
+"buttons@common.scrolling_panel": {
+    "layer": 1,
+    "$scrolling_pane_size": [ "27% ", "96%" ],
+    "$scrolling_content": "start.b1",
+    "$scroll_size": [ 5, "100% - 4px" ],
+    "$show_background": false,
+    "offset":[0,0],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+"contents@common.scrolling_panel": {
+    "layer": 1,
+    "$scrolling_pane_size": [ "70%", "96%" ],
+    "$scrolling_content": "start.c1",
+    "$scroll_size": [ 5, "100% - 4px" ],
+    "$show_background": false,
+    "offset":["29%",0],
+    "anchor_from": "top",
+    "anchor_to": "top"
+  },
+
+"cfv": {
+    "type": "panel",
+    "size": "$s"
+  },
+
+"div":{
+"type":"image",
+"nineslice_size": 2,
+"texture": "textures/gui/newgui/White",
+          "color": "$c",
+          "layer": 4,
+          "size": "$s"
+       },
+
+"522": {
+    "type": "image",
+    "texture": "textures/gui/newgui/White",
+    "size": ["150%","150%"],
+    "layer": -1,
+   "offset": [0,-20],
+    "anchor_from": "center",
+    "anchor_to": "center"
+  },
+
+ "buttonh": {
+    "type": "label",
+    "layer": 5,
+    "text": "$tx",
+    "size": [ "100%", "default" ],
+    "color": "$c",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+"5": {
+    "type": "image",
+    "texture": "textures/5",
+    "size": ["150%","150%"],
+    "layer": -1,
+   "offset": [0,-20],
+    "anchor_from": "center",
+    "anchor_to": "center"
+  },
+
+"标识": {
+    "type": "image",
+    "texture": "textures/45d9de0ee0b868d6",
+    "size": ["100%",110],
+    "layer": 1,
+   "uv": [ 0, 0 ],
+    "uv_size": [ 1500, 500 ],
+   "offset": [0,0],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+"pic1": {
+    "type": "image",
+    "texture": "textures/02",
+    "size": ["100%","400px"],
+    "layer": 1,
+   "uv": [ 0, 0 ],
+    "uv_size": [ 930, 1316 ],
+   "offset": [0,0],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+"map1": {
+    "type": "image",
+    "texture": "textures/IMG_20170422_195841",
+    "size": ["100%","400px"],
+    "layer": 1,
+   "offset": [0,0],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+"041": {
+    "type": "image",
+    "texture": "textures/04",
+    "size": ["100%","100%"],
+    "layer": -1,
+   "offset": [0,0],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+  "language_icon": {
+    "type": "image",
+    "texture": "textures/gui/newgui/Language16",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 16, 16 ],
+    "size": [ 16, 16 ]
+  },
+
+  "feedback_icon": {
+    "type": "image",
+    "texture": "textures/gui/newgui/Feedback",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 16, 16 ],
+    "size": [ 16, 16 ]
+  },
+
+  "Xbox_icon": {
+    "type": "image",
+    "texture": "textures/gui/newgui/xbox4",
+    "layer": 3,
+    "uv": [ 0, 0 ],
+    "uv_size": [ 27, 27 ],
+    "size": [ 27, 27 ]
+  },
+
+  "new_offers_icon": {
+    "type": "image",
+    "texture": "textures/gui/newgui/newOffersIcon",
+    "layer": 15, // This is the lowest layer where the button border won't show through this icon while being pressed
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "uv": [ 0, 0 ],
+    "uv_size": [ 21, 15 ],
+    "size": [ 21, 15 ],
+    "offset": [ 0, -20 ]
+  },
+
+  "copyright": {
+    "type": "label",
+    "layer": 2,
+    "text": "Satchel Charge(炸药包)",
+    "size": [ "default", 9 ],
+    "max_size": [ "100%", "100%" ],
+    "color": [1,0.8,0],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+"maker_icon": {
+    "type": "image",
+    "texture": "$tx",
+    "layer": 3,
+    "offset": [5,5],
+    "size": [ 40, 40 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+"name_label": {
+    "type": "label",
+    "layer": 3,
+    "text": "$t",
+    "font_size": "large",
+    "offset":[50,7],
+    "size": [ "default", 20 ],
+    "color": [0,0.7,1],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+"de_label": {
+    "type": "label",
+    "layer": 3,
+    "text": "$dt",
+    "offset":[50,28],
+    "size": [ "default", 10 ],
+    "color": [1,0.8,0],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+"con_label": {
+    "type": "label",
+    "layer": 3,
+    "text": "你可以用下面的联系方式与作者进行联系:",
+    "offset":[5,50],
+    "size": [ "default", 10 ],
+    "color": [1,0.8,0],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+"conb_label": {
+    "type": "label",
+    "layer": 3,
+    "text": "$t",
+    "offset":[0,0],
+    "size": [ "default", "default" ],
+    "color": [1,1,1],
+    "anchor_from": "center",
+    "anchor_to": "center"
+  },
+
+"cn1@common.hyperlink_button": {
+    "size": [ 50, 25 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [5,65],
+    "property_bag":  {
+      "#hyperlink": "http://aka.ms/minecraftfb"
+    },
+    "controls": [
+      {
+        "default@common.new_button_state_default": {
+          "controls": [
+            { "feedback_icon@start.conb_label": { "$t": "百度贴吧\nxbcdtime" } }
+          ]
+        }
+      },
+      {
+        "hover@common.new_button_state_hover": {
+          "controls": [
+            { "feedback_icon@start.conb_label": { "$t": "百度贴吧\nxbcdtime"} }
+          ]
+        }
+      },
+      {
+        "pressed@common.new_button_state_pressed": {
+          "controls": [
+            {
+              "feedback_icon@start.conb_label": { "$t": "百度贴吧\nxbcdtime",
+                "offset": [ 0, 1 ],
+                "alpha": 0.65
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+"cn2@common.hyperlink_button": {
+    "size": [ 85, 25 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [75,65],
+    "property_bag":  {
+      "#hyperlink": "http://aka.ms/minecraftfb"
+    },
+    "controls": [
+      {
+        "default@common.new_button_state_default": {
+          "controls": [
+            { "feedback_icon@start.conb_label": { "$t": "推特:南厂重工-403\n@SouthFactory403" } }
+          ]
+        }
+      },
+      {
+        "hover@common.new_button_state_hover": {
+          "controls": [
+            { "feedback_icon@start.conb_label": { "$t": "推特:南厂重工-403\n@SouthFactory403" } }
+          ]
+        }
+      },
+      {
+        "pressed@common.new_button_state_pressed": {
+          "controls": [
+            {
+              "feedback_icon@start.conb_label": { "$t": "推特:南厂重工-403\n@SouthFactory403",
+                "offset": [ 0, 1 ],
+                "alpha": 0.65
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+"qqnum@common.tk": {
+    "$c": [1,0.8,0],
+    "offset": [ 195, 65 ],
+    "$tx": "QQ:\n2509942930",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+"maker_panel@div": {
+    "type": "image",
+    "size": [ "100%", 100 ],
+    "$s": ["100%",100],
+    "$c":[0.4,0.4,0.4],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "controls": [
+      {
+        "icon@start.maker_icon": {"$tx":"textures/pro" }
+      },
+      {
+        "name@start.name_label": {
+       "$t": "xbcdtime" }
+      },
+      {
+        "des@start.de_label": { "$dt": "一个来自百度贴吧的GUI作者"}
+      },
+      {
+        "elb@start.con_label": { }
+      },
+      {
+        "bt1@start.cn1": {  }
+      },
+      {
+        "bt2@start.cn2": {  }
+      },
+      {
+        "bt3@start.qqnum": {  }
+      }
+    ]
+  },
+
+  "development_version": {
+    "type": "label",
+    "layer": 2,
+    "text": "-0013-",
+    "size": [ "default", 9 ],
+    "max_size": [ "100%", "100%" ],
+    "color": [1,0.8,0],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "bindings": [
+      {
+        "binding_name": "#signingin_text"
+      }
+    ]
+  },
+
+  "version": {
+    "type": "label",
+    "layer": 2,
+    "text": "#version",
+    "size": [ "default", 9 ],
+    "max_size": [ "100%", "100%" ],
+    "color": [1,0.8,0],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "bindings": [
+      {
+        "binding_name": "#version"
+      }
+    ]
+  },
+
+  "text_panel": {
+    "type": "panel",
+    "size": [ "100%-2px", 9 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "controls": [
+      {
+        "copyright@start.copyright": { }
+      },
+      {
+        "development_version@start.development_version": {
+        }
+      },
+      {
+        "version@start.version": { }
+      }
+    ]
+  },
+
+  //---------------------------------------------------------------------------
+  // Skins Panel
+  //---------------------------------------------------------------------------
+
+  "csb@common_buttons.light_text_button": {
+    "$pressed_button_name": "button.menu_skins",
+    "size": [ "100%", 32 ],
+   "$button_text": "选择皮肤",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+  
+"doll": {
+          "type": "custom",
+          "renderer": "paper_doll_renderer",
+          "rotation": "gesture_x",
+          "size": [ "100%","100%" ],
+         "layer":0,
+         "use_skin_gui_scale": true,
+         "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+          "offset": [ 0, 0 ]
+        },
+
+
+  //---------------------------------------------------------------------------
+  // Online Buttons Panel (and the lang button)
+  //---------------------------------------------------------------------------
+
+  "release_feedback_button@common.hyperlink_button": {
+    "size": [ 24, 24 ],
+    "property_bag":  {
+      "#hyperlink": "http://aka.ms/minecraftfb"
+    },
+    "controls": [
+      {
+        "default@common.new_button_state_default": {
+          "controls": [
+            { "feedback_icon@start.feedback_icon": { } }
+          ]
+        }
+      },
+      {
+        "hover@common.new_button_state_hover": {
+          "controls": [
+            { "feedback_icon@start.feedback_icon": { } }
+          ]
+        }
+      },
+      {
+        "pressed@common.new_button_state_pressed": {
+          "controls": [
+            {
+              "feedback_icon@start.feedback_icon": {
+                "offset": [ 0, 1 ],
+                "alpha": 0.65
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "pre_release_feedback_button@start.release_feedback_button": {
+    "property_bag":  {
+      "#hyperlink": "http://aka.ms/minecraftfbbeta"
+    }
+  },
+
+  "feedback_button": {
+    "type": "panel",
+    "controls": [
+      { "release_feedback_button@start.release_feedback_button": { "ignored": "$pre_release" } },
+      { "pre_release_feedback_button@start.pre_release_feedback_button": { "ignored": "(not $pre_release)" } }
+    ]
+  },
+
+  // Button will resize itself to length of the text
+  "xbl_signin_button@common_buttons.light_text_button": {
+    "$pressed_button_name": "button.xbl_signin",
+    "size": [ "100%", "100%" ], // longest localized string length will fit in this
+    "$button_text": "xbox.signin"
+  },
+
+  "column_frame": {
+    "type": "panel"
+  },
+
+  "online_buttons_panel": {
+    "type": "panel",
+    "offset": [0,0],
+    "anchor_to": "top_left",
+    "anchor_from": "top_left",
+    "size": [ "100%", 32 ],   
+    "controls": [
+      {
+        "stacked_column": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%" ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [0,0],
+          "orientation": "horizontal",
+          "controls": [
+            {
+              "feedback_padding": {
+                "type": "panel",
+                "size": [ "5%", 0 ],
+                "bindings": [
+                  {
+                    "binding_name": "#feedback_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "feedback_btn@start.column_frame": {
+                "ignored": "$feedback_ignored",
+                "size": [ 28, 32 ],
+                "controls": [
+                  { "feedback_button@start.feedback_button": { } }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#feedback_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "xbl_btn@start.column_frame": {
+                "size": [ "100%", 32 ],
+                "controls": [
+                  { "xbl_signin_button@start.xbl_signin_button": { } }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#sign_in_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "signingin": {
+                "size": [ "default", "100%" ],
+                "max_size": [ "100%", "100%" ],
+                "type": "label",
+                "text": "#signingin_text",
+                "bindings": [
+                  {
+                    "binding_name": "#signingin_visible",
+                    "binding_name_override": "#visible"
+                  },
+                  {
+                    "binding_name": "#signingin_text"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  //---------------------------------------------------------------------------
+  // Main Buttons Panel
+  //---------------------------------------------------------------------------
+
+  "main_button@common_buttons.light_text_button": {
+    "size": [ "100% - 2px", "100% - 2px" ]
+  },
+
+  "play_button@start.main_button": {
+    "$pressed_button_name": "button.menu_play",
+    "$button_text": "menu.play",
+    "default_focus_precedence": 1
+  },
+
+  "achievements_button@start.main_button": {
+    "$pressed_button_name": "button.menu_achievements",
+    "$button_text": "menu.achievements"
+  },
+
+  "settings_button@start.main_button": {
+    "$pressed_button_name": "button.menu_settings",
+    "$button_text": "menu.settings"
+  },
+
+  "store_button@start.main_button": {
+    "$pressed_button_name": "button.menu_store",
+    "$button_text": "menu.store"
+  },
+
+  "buy_game_button@start.main_button": {
+    "$pressed_button_name": "button.menu_buy_game",
+    "$button_text": "trial.pauseScreen.buyGame"
+  },
+
+  "stacked_row": {
+    "type": "panel",
+    "size": [ "100%", 32 ]
+  },
+
+  "main_buttons_panel": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100%", 100 ],
+    "offset": [ 0, 0 ],
+    "controls": [
+      {
+        "stacked_rows": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%" ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "controls": [
+            {
+              "stacked_row_0@start.stacked_row": {
+                "controls": [
+                  { "play_button@start.play_button": { } }
+                ]
+              }
+            },
+            {
+              "stacked_row_1@start.stacked_row": {
+                "ignored": "$achievements_ignored",
+                "controls": [
+                  { "achievements_button@start.achievements_button": { } }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#achievements_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "stacked_row_2@start.stacked_row": {
+                "controls": [
+                  {
+                    "stacked_columns": {
+                      "type": "stack_panel",
+                      "size": [ "100%", "100%" ],
+                      "orientation": "horizontal",
+                      "controls": [
+                        {
+                          "stacked_col_0": {
+                            "type": "panel",
+                            "size": [ "fill", "100%" ],
+                            "controls": [
+                              { "settings_button@start.settings_button": { } }
+                            ]
+                          }
+                        },
+                        {
+                          "stacked_col_1": {
+                            "type": "panel",
+                            "size": [ "50%", "100%" ],
+                            "ignored": "$store_ignored",
+                            "controls": [
+                              { "store_button@start.store_button": { } },
+                              {
+                                "new_offers_icon@start.new_offers_icon": {
+                                  "bindings": [
+                                    {
+                                      "binding_name": "#new_offers",
+                                      "binding_name_override": "#visible"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "stacked_row_3@start.stacked_row": {
+                "controls": [
+                  { "buy_game_button@start.buy_game_button": { } }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#trial_game_mode",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "gamepad_helpers": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "offset": [ 0, "40%" ],
+    "size": [ "100%c", 10 ],
+    "controls": [
+      { "gamepad_helper_a@common.gamepad_helper_a": { } },
+      {
+        "control": {
+          "type": "panel",
+          "size": [ 10, 0 ]
+        }
+      },
+      { "gamepad_helper_b@common.gamepad_helper_b": { } }
+    ]
+  },
+
+
+
+"b1": {
+    "type": "stack_panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100%","100%c" ],
+    "controls": [
+      {
+        "title_panel_content@common_art.title_image_pocket": { "size":["100%",40], "controls": [  {  "splash_text@common_art.splash_text":{  "offset":["-36%",0]}  }  ]  }
+     },
+      {"01@buttonh": {"$tx": "菜单", "$c":[1,0.8,0]} },
+      { "02@start.main_buttons_panel": { } },
+      {"03@buttonh": {"$tx": "xbox登陆", "$c":[1,0.8,0]} },
+      { "04@start.online_buttons_panel": { } },
+      { "05@start.buttonh":{"$tx": "玩家名称:", "$c": [1,0.8,0] } },
+      { "06@start.buttonh":{"$tx": "#playername", "$c": [0,0.9,1],  "bindings": [
+      {
+        "binding_name": "#playername"
+      }
+    ] } },
+       { "07@start.buttonh": { "$tx":"皮肤", "$c":[1,0.8,0]} },
+      { "08@start.csb": { } },
+      { "09@start.c2": { } }
+    ]
+  },
+
+"c1": {
+    "type": "stack_panel",
+    "size": [ "100%","100%c" ],
+    "controls": [
+      {"0b@cfv": { "$s": ["100%",15]} },
+      {"10f@buttonh": {"$tx": "本版次概览-0013",  "$c":[0,0.6,1], "font_size": "large"} },
+      {"0a@cfv": { "$s": ["100%",6]} },
+      {"11@buttonh": {"$tx": "由于有些匆忙，有好些东西会有瑕疵!
+1.新版Satchel Charge(炸药包)start屏幕重制，推翻以前的排版.
+2.hud屏聊天栏重制，仿pc版聊天栏，同时坐标指示器可用!
+3.全局95％的UI将会进行重制.
+4.另外，新版本炸药包的关于页面从patch_notes.json移动到settings_screen.json,以避免关于页面打不开的问题.
+5.同时，界面半透明化，采用一堆的Material Icon.英文字体采用Terminal Greek 737.
+6.设置细节进行优化(开关，Radio)
+7.商店的部分UI进行优化.
+
+欢迎各位前来试用此炸药包!
+
+--------Union Pacific--------",  "$c":[1,0.8,0]} },
+{"0112h@cfv": { "$s": ["100%",6]} },
+{"1125h@buttonh": {"$tx": "关于此版次:",  "$c":[0,0.6,1], "font_size": "large"} },
+{"10o@buttonh": {"$tx": "制作者信息",  "$c":[1,0.8,0]} },
+{ "dda@start.maker_panel": {  } },
+{"logo@标识": { } },
+{"UNION PACIFIC@buttonh": {"$tx": "----------------Union Pacific----------------",  "$c":[1,0.9,0]} },
+{"0119h@cfv": { "$s": ["100%",6]} },
+{"11255h@buttonh": {"$tx": "关于-着色器部分",  "$c":[0,0.6,1], "font_size": "large"} },
+{"1012h@buttonh": {"$tx": "信息暂缺-........",  "$c":[1,0.8,0]} },
+{"UNION PACIFIC2@buttonh": {"$tx": "----------------Union Pacific----------------",  "$c":[1,0.9,0]} },
+{"01122@cfv": { "$s": ["100%",6]} },
+{"1125g@buttonh": {"$tx": "额外内容:",  "$c":[0,0.6,1], "font_size": "large"} },
+{"10a@buttonh": {"$tx": "内容填充区- ",  "$c":[1,0.8,0]} },
+{"10ab@buttonh": {"$tx": "联合太平洋",  "$c":[0,0.9,1]} },
+{"b1ff@map1": { } }
+    ]
+  },
+
+"c2": {
+    "type": "stack_panel",
+    "size": [ "100%",90],
+    "controls": [
+      {"111@doll": {    } }
+    ]
+  },
+
+  //---------------------------------------------------------------------------
+  // Realms Invite Panel
+  //---------------------------------------------------------------------------
+
+  "invite_notification_icon": {
+    "type": "image",
+    "texture": "$invite_texture",
+    "uv": [ 0, 0 ],
+    "uv_size": [ 16, 16 ],
+    "size": [ 16, 16 ]
+  },
+
+  "realms_pending_invite_panel": {
+    "type": "panel",
+    "layer": 1,
+    "size": [ 24, 24 ],
+    "controls": [
+      {
+        "button@common.new_button": {
+          "$pressed_button_name": "button.menu_invite_notification",
+          "size": [ 20, 20 ],
+          "offset": [ 2, 2 ],
+          "controls": [
+            {
+              "default@start.invite_notification_icon": { "$invite_texture": "textures/gui/newgui/invite_base" }
+            },
+            {
+              "hover@start.invite_notification_icon": { "$invite_texture": "textures/gui/newgui/invite_hover" }
+            },
+            {
+              "pressed@start.invite_notification_icon": { "$invite_texture": "textures/gui/newgui/invite_pressed" }
+            }
+          ]
+        }
+      }
+    ],
+"bindings": [
+      {
+        "binding_name": "#realms_notification_visible",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  //---------------------------------------------------------------------------
+  // Screens
+  //---------------------------------------------------------------------------
+
+  "start_screen@common.base_screen": {
+
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.menu_up",
+        "to_button_id": "button.menu_up",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_down",
+        "to_button_id": "button.menu_down",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_left",
+        "to_button_id": "button.menu_left",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_right",
+        "to_button_id": "button.menu_right",
+        "mapping_type": "global",
+        "scope": "view"
+      }
+    ],
+    "$screen_content": "start.start_screen_content"
+  },
+
+  "start_screen_content": {
+    "type": "panel",
+    "$achievements_ignored|default": false,
+    "$feedback_ignored|default": false,
+    "$store_ignored|default": false,
+    "variables": [
+      {
+        "requires": "$education_edition",
+        "$achievements_ignored": true,
+        "$store_ignored|default": true
+      },
+      {
+        "requires": "$gear_vr",
+        "$feedback_ignored": true
+      },
+      {
+        "requires": "$fire_tv",
+        "$feedback_ignored": true
+      }
+    ],
+    "controls": [
+      {
+        "gamepad_helpers@start.gamepad_helpers": { }
+      },
+      {
+        "main_buttons_panel@start.buttons": { }
+      },
+      {
+        "main_contents_panel@start.contents": { }
+      },
+      {
+        "text_panel@start.text_panel": { }
+      },
+      {
+        "bkg@start.5": { }
+      },
+      {
+        "realms_pending_invite_panel@start.realms_pending_invite_panel": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,349 @@
+{
+  "namespace": "toast_screen",
+
+  "toast_renderer": {
+    "type": "custom",
+    "renderer": "toast_renderer"
+  },
+
+  "popup_anim_wait": {
+    "anim_type": "wait",
+    "duration": "$display_time",
+    "next": "@toast_screen.popup_anim_end"
+  },
+
+  "popup_anim_start": {
+    "anim_type": "offset",
+    "easing": "spring",
+    "from": [ 0, 0 ],
+    "to": "$popup_distance",
+    "duration": "$transition_in_time",
+    "next": "@toast_screen.popup_anim_wait"
+  },
+
+  "popup_anim_end": {
+    "anim_type": "offset",
+    "easing": "in_sine",
+    "to": [ 0, 0 ],
+    "from": "$popup_distance",
+    "duration": "$transition_out_time",
+    "destroy_at_end": "popup",
+    "end_event": "toast_end"
+  },
+
+  "xbox_icon": {
+    "type": "image",
+    "texture": "textures/gui/newgui/xbox4",
+    "uv": [ 0, 0 ],
+    "uv_size": [ 27, 27 ],
+    "size": [ 13, 13 ]
+  },
+
+  "gamer_score_icon": {
+    "type": "image",
+    "texture": "textures/gui/achievements/g",
+    "uv": [ 0, 0 ],
+    "uv_size": [ 11, 11 ],
+    "size": [ 7, 7 ]
+  },
+
+  "resource_pack_icon": {
+    "type": "image",
+    "texture": "#icon_path",
+    "zip_folder": "#icon_zip",
+    "texture_file_system": "#icon_file_system",
+    "uv": [ 0, 0 ],
+    "size": [ 13, 13 ],
+    "bindings": [
+      {
+        "binding_name": "#icon_path",
+        "binding_name_override": "#texture"
+      },
+      {
+        "binding_name": "#icon_zip",
+        "binding_name_override": "#zip_folder"
+      },
+      {
+        "binding_name": "#icon_file_system",
+        "binding_name_override": "#texture_file_system"
+      },
+      {
+        "binding_name": "#is_resource_pack",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "toast_label": {
+    "type": "label",
+    "color": [ 1.0, 1.0, 1.0 ],
+    "layer": 1,
+    "shadow": false,
+    "font_size": "normal",
+    "offset": [ 22, 5 ],
+    "size": [ "100%-26px", "100%" ]
+  },
+
+  "popup@common.input_panel": {
+    "anchor_from": "top_right",
+    "anchor_to": "bottom_right",
+    "size": "$popup_size",
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "uv": [ 0, 0 ],
+          "nineslice_size": 4.0,
+          "uv_size": [ 16, 16 ],
+          "texture": "textures/gui/greyBorder"
+        }
+      },
+      {
+        "icon_trophy@toast_screen.xbox_icon": {
+          "offset": [ 6, 0 ],
+          "layer": 1,
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "bindings": [
+            {
+              "binding_name": "#is_achievement",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "icon_xbox@toast_screen.xbox_icon": {
+          "offset": [ 6, 0 ],
+          "layer": 1,
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "bindings": [
+            {
+              "binding_name": "#is_invite",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "icon_resource_pack@toast_screen.resource_pack_icon": {
+          "offset": [ 6, 0 ],
+          "layer": 1,
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle"
+        }
+      },
+      {
+        "title@toast_screen.toast_label": {
+          "text": "#toast_title",
+          "color": [ 1.0, 1.0, 1.0 ],
+          "size": [ "100% - 27px", "100% - 10px" ],
+          "offset": [ 22, 5 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "bindings": [
+            {
+              "binding_name": "#toast_title"
+            }
+          ]
+        }
+      },
+      {
+        "subtitle": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "offset": [ 22, 0 ],
+          "size": [ "100%-26px", "50%" ],
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "controls": [
+            {
+              "icon_padding": {
+                "type": "panel",
+                "size": [ 9, 7 ],
+                "bindings": [
+                  {
+                    "binding_name": "#is_achievement",
+                    "binding_name_override": "#visible"
+                  }
+                ],
+                "controls": [
+                  {
+                    "gamer_score_icon@toast_screen.gamer_score_icon": {
+                      "offset": [ 0, 2 ],
+                      "layer": 1,
+                      "anchor_from": "left_middle",
+                      "anchor_to": "left_middle"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "subtext@toast_screen.toast_label": {
+                "size": [ "default", 10 ],
+                "text": "#toast_subtitle",
+                "bindings": [
+                  {
+                    "binding_name": "#toast_subtitle"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "anims": [
+      "@toast_screen.popup_anim_start"
+    ]
+  },
+
+"anim_wait": {
+    "anim_type": "wait",
+    "duration": 1,
+    "next": "@anim_move_forward"
+  },
+
+ "anim_move_forward": {
+    "anim_type": "offset",
+    "activated": "#active",
+    "from": [ "105%", 15 ],
+    "to": [ "-240%", 15 ],
+    "duration": 60,
+    "next": "@anim_wait"
+  },
+  
+  "scroll_label": {
+    "type": "label",
+    "alignment": "top_left",
+    "layer": 4,
+	"offset": "@debug_screen.anim_move_forward",
+    "shadow": true,
+    "color": [ 1, 0.7, 0 ],
+    "text": "  欢迎使用生存模式创造GUI for 1.0.0.16 整合!  蛤，马上就要到元旦和圣诞节了，在这里作者祝你们节日快乐，炸房愉快！ 此整合包含内容: 1.SMCI for 1.0.0.16 .  作者:百度贴吧@xbcdtime.  南北铁路局, All Rights Reserved! 禁止对此进行任何形式的无权搬运! 另外，我想在在这里说的是： 请不要像 5577我机网 ，炸妈的，以及葫芦侠的人那样无权搬运！ 否则，我会来处理这些东西的！",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+  
+  "02": {
+    "type": "label",
+    "size": [ 250, 10 ],
+    "offset": [ 0, 30 ],
+    "alignment": "top_left",
+    "layer": 2,
+    "color": [ 1, 0.8, 0 ],
+    "text": "1.0.5.0测试版-特性探索",
+	"shadow": true,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+    "03": {
+    "type": "label",
+    "size": [ 280, 30 ],
+    "offset": [ 0, 40 ],
+    "alignment": "top_left",
+    "layer": 2,
+    "color": [ 1.0, 1.0, 0.0 ],
+	"shadow": true,
+    "text": "南厂-403(2509942930)",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+  
+  "verinfo": {
+    "type": "label",
+    "size": [ 500, 10 ],
+    "offset": [ 0, 50 ],
+    "alignment": "top_left",
+    "layer": 2,
+    "color": [ 0.8, 1, 0 ],
+    "text": "MCPE ver： 1.0.0.16 |   SMCI ver： 0.4.0",
+	"shadow": true,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+  
+  "verinfo2": {
+    "type": "label",
+    "size": [ 250, 10 ],
+    "offset": [ 0, 60 ],
+    "alignment": "top_left",
+    "layer": 2,
+    "color": [ 0.8, 1, 0 ],
+    "text": "Sat. Dec. 24 16：36：59 CST 2016",
+	"shadow": true,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+  
+  "stat": {
+    "type": "label",
+    "size": [ 250, 10 ],
+    "offset": [ 0, 70 ],
+    "alignment": "top_left",
+    "layer": 2,
+	"shadow": true,
+	"ignored": "$pocket_screen",
+    "text": "使用界面： Classic",
+    "color": [ 0, 1, 0 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+            {
+              "binding_condition": "always_when_visible",
+              "binding_type": "global"
+            }
+          ]
+  },
+  
+  "stat2": {
+    "type": "label",
+    "size": [ 600, 10 ],
+    "offset": [ 0, 70 ],
+    "alignment": "top_left",
+    "layer": 2,
+	"shadow": true,
+	"ignored": "$desktop_screen",
+    "text": "使用界面： Pocket; Warning! 请到设置将UI Profile 设置为classic",
+    "color": [ 1, 0.1, 0 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+            {
+              "binding_condition": "always_when_visible",
+              "binding_type": "global"
+            }
+          ]
+  },
+  
+  "userinfo": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "anchor_from": "top",
+    "anchor_to": "top",
+	"controls": [
+	{ "01@toast_screen.02": { } },
+ { "02@toast_screen.03": { } },
+	{ "03@toast_screen.special_render": { } },
+   { "04@toast_screen.scroll_label": { } },
+   { "05@toast_screen.stat": { } },
+   { "06@toast_screen.stat2": { } }
+    ]
+  },
+
+  "toast_screen@common.base_screen": {
+    "send_telemetry": false,
+    "screen_not_flushable": true,
+    "render_game_behind": true,
+    "is_showing_menu": false,
+    "is_modal": true,
+    "low_frequency_rendering": true,
+    "should_steal_mouse": false,
+    "render_only_when_topmost": false,
+    "screen_draws_last": true,
+   "$screen_content": "toast_screen.userinfo"
+  }
+}

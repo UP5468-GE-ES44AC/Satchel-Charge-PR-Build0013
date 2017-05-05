@@ -1,0 +1,172 @@
+{
+  "namespace": "debug_screen",
+
+  "special_render": {
+    "type": "custom",
+    "renderer": "debug_screen_renderer"
+  },
+
+ "c11": {
+    "anim_type": "color",
+    "duration": 0.3,
+    "from": [ 1, 1, 0, 1 ],
+    "to": [ 1, 1, 0, 1 ],
+    "next": "@c12"
+  },
+
+"c12": {
+    "anim_type": "color",
+    "duration": 0.3,
+    "from": [ 1, 0.2, 0, 1 ],
+    "to": [ 1, 0.2, 0, 1 ],
+    "next": "@c11"
+  },
+
+  "a11": {
+    "anim_type": "alpha",
+    "duration": 0.4,
+    "from": 1,
+    "to": 1,
+   "next": "@a12"
+  },
+
+  "a12": {
+    "anim_type": "alpha",
+    "duration": 0.4,
+    "from": 0,
+    "to": 0,
+    "next": "@a11"
+  },
+
+
+  "anim_wait": {
+    "anim_type": "wait",
+    "duration": 1,
+    "next": "@anim_move_forward"
+  },
+
+ "anim_move_forward": {
+    "anim_type": "offset",
+    "activated": "#active",
+    "from": [ "105%", 15 ],
+    "to": [ "-240%", 15 ],
+    "duration": 60,
+    "next": "@anim_wait"
+  },
+  
+  "scroll_label": {
+    "type": "label",
+    "alignment": "top_left",
+    "layer": 4,
+	"offset": "@debug_screen.anim_move_forward",
+    "shadow": true,
+    "color": [ 0, 1, 1],
+    "text": "  欢迎使用生存模式创造GUI for 1.0.0.16 整合!  蛤，马上就要到元旦和圣诞节了，在这里作者祝你们节日快乐，炸房愉快！ 此整合包含内容: 1.SMCI for 1.0.0.16 .  作者:百度贴吧@xbcdtime.  南北铁路局, All Rights Reserved! 禁止对此进行任何形式的无权搬运! 另外，我想在在这里说的是： 请不要像 5577我机网 ，炸妈的，以及葫芦侠的人那样无权搬运！ 否则，我会来处理这些东西的！",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+  
+  "02@common.tk": {
+    "$c": [1,0.6,0],
+    "offset": [ 0, 30 ],
+    "$tx": "1.1.0.0测试版-特性探索",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+    "03@common.tk": {
+    "offset": [ 0, 2 ],
+    "$c": "green",
+    "$tx": "南厂重工-403",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+"border": {
+    "type": "image",
+    "texture": "textures/gui/newgui/focusBorder",
+    "uv": [ 0, 0 ],
+    "alpha":1,
+    "uv_size": [ 5, 5 ],
+    "nineslice_size": 1.0
+  },
+  
+  "verinfo@common.tk": {
+    "offset": [0,17],
+    "$c": [ 1, 0.8, 0 ],
+   "$bc": [ 1, 0.8, 0 ],
+    "$tx": "Build:PR0013-SHOP 文件修改次数:227",
+   "anchor_from": "top_left",
+    "anchor_to": "top_left"
+},
+
+"verinfo2@common.tk": {
+    "offset": [0,32],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$c": [ 1, 0.6, 0 ],
+    "$tx":"最近构建日期:Thu Apr 13 21:07:16 CST 2017"
+},
+
+  
+  "stat@common.tk": {
+    "offset": [ 0, 47 ],
+	"ignored": "$pocket_screen",
+    "$tx": "使用界面：Classic",
+    "$c": [0,1,0.1],
+   "alpha": "@debug_screen.a11",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+            {
+              "binding_name": "#visible",
+              "binding_condition": "always_when_visible",
+              "binding_type": "global"
+            }
+          ]
+  },
+  
+  "stat2@common.tk": {   
+    "offset": [ 0, 47 ],
+	"ignored": "$desktop_screen",
+    "$tx": "使用界面：Pocket",
+    "alpha": "@debug_screen.a11",
+    "$c": [ 1, 0.1, 0 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+            {
+              "binding_name": "#visible",
+              "binding_condition": "always_when_visible",
+              "binding_type": "global"
+            }
+          ]
+  },
+  
+  "userinfo": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "anchor_from": "top",
+    "anchor_to": "top",
+	"controls": [
+ { "02@debug_screen.03": { } },
+	{ "03@debug_screen.special_render": { } },
+  { "04@debug_screen.verinfo": { } },
+ { "05@debug_screen.verinfo2": { } },
+{ "06@debug_screen.stat": { } },
+{ "07@debug_screen.stat2": { } }
+    ]
+  },
+
+  "debug_screen@common.base_screen": {
+    "send_telemetry": false,
+    "screen_not_flushable": true,
+    "render_game_behind": true,
+    "is_showing_menu": true,
+    "is_modal": true,
+    "should_steal_mouse": false,
+    "render_only_when_topmost": false,
+    "screen_draws_last": true,
+    "$screen_content": "debug_screen.userinfo"
+  }
+}
